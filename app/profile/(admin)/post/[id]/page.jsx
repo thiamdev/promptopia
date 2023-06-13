@@ -21,6 +21,7 @@ const UserProfile = ({ params }) => {
       setLoading(false);
 
       setUserPosts(data);
+      console.log(data)
     };
 
     if (params?.id) fetchPosts();
@@ -28,8 +29,9 @@ const UserProfile = ({ params }) => {
 
   return (
     <>
-      {loading && <Spinner />}
+     
       <Profile
+      loading={loading}
         name={userName}
         desc={`Welcome to ${userName}'s personalized profile page. Explore ${userName}'s exceptional prompts and be inspired by the power of their imagination`}
         data={userPosts}

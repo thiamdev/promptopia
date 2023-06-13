@@ -2,17 +2,59 @@ import { connectToDB } from "@utils/database";
 import Prompt from "@models/prompt";
 
 export const POST = async (req) => {
-  const { userId, prompt, tag, image, username, email } = await req.json();
+  const {
+    userId,
+    username,
+    itemToSell,
+    propertyType,
+    saleType,
+    sellerType,
+    address,
+    description,
+    price,
+    images,
+    image,
+    bedrooms,
+    bathrooms,
+    livingRooms,
+    dispo, 
+    landSize,
+    titleType,
+    comments,
+  } = await req.json();
   try {
     await connectToDB();
 
     const newPrompt = new Prompt({
       creator: userId,
-      prompt,
-      tag,
-      image,
       username,
-      email,
+      itemToSell,
+      propertyType,
+      saleType,
+      sellerType,
+      address,
+      description,
+      price,
+      images,
+      image,
+      bedrooms,
+      bathrooms,
+      livingRooms,
+      dispo: {
+        wifi: dispo.wifi,
+        pool: dispo.pool,
+        Mountain: dispo.Mountain,
+        Beach: dispo.Beach,
+        chef: dispo.chef,
+        Parking: dispo.Parking,
+        camera: dispo.camera,
+        Wheelchair: dispo.wheelchair,
+        Patio: dispo.Patio,
+      },
+
+      landSize,
+      titleType,
+      comments
     });
 
     await newPrompt.save();

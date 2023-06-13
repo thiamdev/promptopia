@@ -1,4 +1,24 @@
+
 import { Schema, model, models } from "mongoose";
+
+const profilUser = new Schema({
+  entreprise: {
+    type: String,  
+    required: true,
+  },
+  address: {
+    type: String,
+    required: true,
+  },
+  ninea: {
+    type: String,
+    required: true,
+  },
+  contact: {
+    type: String,
+    required: true,
+  }
+});
 
 const UserSchema = new Schema({
   email: {
@@ -17,7 +37,11 @@ const UserSchema = new Schema({
     type: String,
     required: true,
   },
-});
+  profil: [profilUser],
+  
+}
+
+);
 
 const User = models.User || model("User", UserSchema);
 

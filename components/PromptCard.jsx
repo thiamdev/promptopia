@@ -4,7 +4,8 @@ import { useState } from "react";
 import Image from "next/image";
 import { useSession } from "next-auth/react";
 import { usePathname, useRouter } from "next/navigation";
-import nanoid  from "nanoid";
+import nanoid from "nanoid";
+import { Locate, MapPinHouse, Star, StarIcon, Trash } from "lucide-react";
 
 const PromptCard = ({ post, handleTagClick, handleEdit, handleDelete }) => {
   const { data: session } = useSession();
@@ -14,88 +15,103 @@ const PromptCard = ({ post, handleTagClick, handleEdit, handleDelete }) => {
   const [copied, setCopied] = useState("");
 
   const handleProfileClick = () => {
-    if (post.creator === session?.user.id) return router.push("/profile");
+    if (post?.creator === session?.user.id) return router.push("/profile");
 
-    router.push(`/profile/${post.creator}?name=${post.username}`);
+    router.push(`/profile/post/${post._id}?name=${post._id}`);
+
   };
 
-  const handleCopy = () => {
-    setCopied(post.prompt);
-    navigator.clipboard.writeText(post.prompt);
-
-    setTimeout(() => setCopied(""), 3000);
-  };
-
-  const stringOfTags = post.tag.split(",");
 
   return (
-    <div className="prompt_card">
-      <div className="flex justify-between items-start gap-5">
+    <div className=" relative w-full group grid [grid-template-areas:stack]">
+      <div className="">
         <div
-          className="flex-1 flex justify-start cursor-pointer items-center gap-3 profile"
+          className="flex-1 flex justify-start w-full cursor-pointer items-center gap-3 profile"
           onClick={handleProfileClick}
         >
-          <Image
-            src={post?.image}
-            alt="user image"
-            width={40}
-            height={40}
-            className="rounded-full object-contain"
-          />
-          <div className="flex flex-col">
-            <h3 className="font-satoshi font-semibolt text-gray-900">
-              {post?.username}
-            </h3>
-            <p className="font-inter text-sm text-gray-500">
-              {post?.email}
-            </p>
+          <div className=' my-2 w-full'>
+
+            <div className='h-fit bg-white relative rounded-xl overflow-hidden md:mx-0 mx-4  border border-gray-300 '>
+              <div className='w-full h-[200px] relative'>
+                <Image
+                  src={post?.images?.[0]}
+                  width={100}
+                  height={100}
+                  className="w-full h-full object-cover "
+                />
+                <div className="absolute bottom-1 left-3">
+                  <div className="avatar">
+                    <div className="ring-primary ring-offset-base-100 w-7 rounded-full ring ring-offset-2">
+                      <Image src={post?.creator?.image} width={47} height={47}/>
+                    </div>
+                  </div>
+                </div>
+
+              </div>
+
+              <div className='p-3 text-gray-800 '>
+                <div className="w-full flex items-center justify-between">
+                  <div>
+                    <p className='text-xs text-left font-light'>{post?.propertyType}</p>
+                    <h1 className='font-bold whitespace-nowrap overflow-hidden  w-[200px] text-ellipsis'>
+                      <p className="text-left">  {post?.itemToSell}</p>
+                    </h1>
+                    <p className='text-xs font-extralight flex items-center gap-1'>
+                    <div className="flex items-center gap-1">
+                        <StarIcon className="w-2.5 h-2.5 fill-primary" />
+                        <StarIcon className="w-2.5 h-2.5 fill-primary" />
+                        <StarIcon className="w-2.5 h-2.5 fill-primary" />
+                        <StarIcon className="w-2.5 h-2.5 fill-primary" />
+                        <StarIcon className="w-2.5 h-2.5" />
+                      </div>
+                      <p>8.2 Trés bien</p>
+
+                    </p>
+                    <p className='text-xs font-extralight'>
+                      <span className='flex gap-1 leading-7 items-center'>
+                        <MapPinHouse className="w-4 h-4" />
+                        <p> {post?.address}</p>
+                      </span>
+                    </p>
+                  </div>
+                  <div>
+                    <p className='text-xs font-extralight leading-3'>A partir de: </p>
+                    <h1 className='font-bold'>XOF {post?.price}</h1>
+                  </div>
+                </div>
+
+
+
+
+              </div>
+              <div className="w-full">
+              {session?.user.id === post?.creator?._id && pathName === "/profile" && (
+                <div className="my-4 flex w-full justify-between mx-2">
+                  <button
+                    type="button"
+                    className="font-inter text-sm w-[45%] cursor-pointer bg-white Btn"
+                    onClick={handleEdit}
+                  >
+                    Editer
+                  </button>
+                  <button
+                    type="button"
+                    className="font-inter text-sm hover:bg-orange-600 hover:text-white flex-end cursor-pointer bg-white p-2 rounded-full absolute top-1 right-1"
+                    onClick={handleDelete}
+                  >
+                   <Trash className="w-5 h-5"/>
+                  </button>
+                </div>
+              )}
+              </div>
+           
+
+            </div>
           </div>
         </div>
-        <div className="copy_btn " onClick={handleCopy}>
-          <Image
-            src={
-              copied === post.prompt
-                ? "/assets/icons/tick.svg"
-                : "/assets/icons/copy.svg"
-            }
-            width={12}
-            height={12}
-            alt="icon"
-          />
-        </div>
+
+
       </div>
-      <p className="my-4 font-satoshi text-sm text-gray-700">{post.prompt}</p>
-      <div className="wrapper">
-        {stringOfTags.map((tag) => {
-          return (
-            <p
-              key={nanoid()}
-              className="font-inter text-sm blue_gradient cursor-pointer tag"
-              onClick={() => handleTagClick && handleTagClick(tag)}
-            >
-              {tag}
-            </p>
-          );
-        })}
-      </div>
-      {session?.user.id === post.creator?._id && pathName === "/profile" && (
-        <div className="mt-5 flex-center gap-4 border-t border-gray-100 pt-3">
-          <button
-            type="button"
-            className="font-inter text-sm cursor-pointer bg-white btn"
-            onClick={handleEdit}
-          >
-            Edit
-          </button>
-          <button
-            type="button"
-            className="font-inter text-sm cursor-pointer btn"
-            onClick={handleDelete}
-          >
-            Delete
-          </button>
-        </div>
-      )}
     </div>
   );
 };
