@@ -28,12 +28,14 @@ export default function Navbar({ handleSearchChange, searchText }) {
             <div className='w-full max-w-7xl mx-auto px-3 h-[80px] flex items-center justify-between '>
                 <h1 className='text-orange-600  text-2xl font-bold flex items-center gap-2'><span><Building2 className='w-7 h-7' /></span>imo</h1>
                 <div>
-                    <div className='md:flex items-center hidden lg:w-[500px] justify-between  border border-gray-400 pl-5 rounded-full shadow-md shadow-neutral-200/70'>
-                        <input type="search" name="" value={searchText} onChange={handleSearchChange} required placeholder='votre prochain destination' id=""
-                            className='outline-none border-none w-full' />
-                        <div className='w-[60px] h-[38px] bg-orange-500 shadow-xl shadow-gray-200 m-1 cursor-pointer flex items-center justify-center text-white rounded-full'>
+                    <div className='md:flex items-center hidden lg:w-[500px] justify-between  border border-gray-400  rounded-full pr-2 shadow-md shadow-neutral-200/70'>
+                        <div className='w-[60px] h-[38px] px-3  m-1 cursor-pointer flex items-center justify-center text-black  rounded-full'>
                             <Search className='w-6 h-6 ' />
                         </div>
+                       <p className="pr-5">|</p>
+                        <input type="search" name="" value={searchText} onChange={handleSearchChange} required placeholder='votre prochain destination' id=""
+                            className='outline-none border-none w-full' />
+
                     </div>
                 </div>
                 <div className='flex justify-between items-center gap-4'>
@@ -70,7 +72,7 @@ export default function Navbar({ handleSearchChange, searchText }) {
                                         onClick={() => signIn(provider.id)}
                                         className="black_btn"
                                     >
-                                       Se connecter
+                                        Se connecter
                                     </button>
                                 ))}
                         </>

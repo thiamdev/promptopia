@@ -15,7 +15,7 @@ export default function Footer() {
         <div className="container w-full max-w-7xl mx-auto px-4">
           <div className="flex flex-wrap text-center lg:text-left">
             <div className="w-full lg:w-6/12 px-4">
-              <h4 className="text-3xl font-semibold">Avec Immo trouver votre futur maison</h4>
+              <h4 className="text-3xl font-normal">Avec Immo trouver votre futur maison</h4>
               <h5 className="text-lg mt-0 mb-2 text-blueGray-600">
                 Find us on any of these platforms, we respond 1-2 business days.
               </h5>
@@ -44,13 +44,13 @@ export default function Footer() {
             <div className="w-full lg:w-6/12 px-4">
               <div className="flex flex-wrap items-top mb-6">
                 <div className="w-full lg:w-4/12 px-4 ml-auto">
-                  <span className="block uppercase text-blueGray-500 text-sm font-semibold mb-2">
+                  <span className="block uppercase text-blueGray-500 text-sm font-normal mb-2">
                     Useful Links
                   </span>
                   <ul className="list-unstyled">
                     <li>
                       <a
-                        className="text-blueGray-600 hover:text-blueGray-800 font-semibold block pb-2 text-sm"
+                        className="text-blueGray-600 hover:text-blueGray-800 font-normal block pb-2 text-sm"
                         href="https://www.creative-tim.com/presentation?ref=nnjs-footer"
                       >
                         About Us
@@ -58,7 +58,7 @@ export default function Footer() {
                     </li>
                     <li>
                       <a
-                        className="text-blueGray-600 hover:text-blueGray-800 font-semibold block pb-2 text-sm"
+                        className="text-blueGray-600 hover:text-blueGray-800 font-normal block pb-2 text-sm"
                         href="https://blog.creative-tim.com?ref=nnjs-footer"
                       >
                         Blog
@@ -66,7 +66,7 @@ export default function Footer() {
                     </li>
                     <li>
                       <a
-                        className="text-blueGray-600 hover:text-blueGray-800 font-semibold block pb-2 text-sm"
+                        className="text-blueGray-600 hover:text-blueGray-800 font-normal block pb-2 text-sm"
                         href="https://www.github.com/creativetimofficial?ref=nnjs-footer"
                       >
                         Github
@@ -74,7 +74,7 @@ export default function Footer() {
                     </li>
                     <li>
                       <a
-                        className="text-blueGray-600 hover:text-blueGray-800 font-semibold block pb-2 text-sm"
+                        className="text-blueGray-600 hover:text-blueGray-800 font-normal block pb-2 text-sm"
                         href="https://www.creative-tim.com/bootstrap-themes/free?ref=nnjs-footer"
                       >
                         Free Products
@@ -83,13 +83,13 @@ export default function Footer() {
                   </ul>
                 </div>
                 <div className="w-full lg:w-4/12 px-4">
-                  <span className="block uppercase text-blueGray-500 text-sm font-semibold mb-2">
+                  <span className="block uppercase text-blueGray-500 text-sm font-normal   mb-2">
                     Other Resources
                   </span>
                   <ul className="list-unstyled">
                     <li>
                       <a
-                        className="text-blueGray-600 hover:text-blueGray-800 font-semibold block pb-2 text-sm"
+                        className="text-blueGray-600 hover:text-blueGray-800 font-normal block pb-2 text-sm"
                         href="https://github.com/creativetimofficial/notus-nextjs/blob/main/LICENSE.md?ref=nnjs-footer"
                       >
                         MIT License
@@ -97,7 +97,7 @@ export default function Footer() {
                     </li>
                     <li>
                       <a
-                        className="text-blueGray-600 hover:text-blueGray-800 font-semibold block pb-2 text-sm"
+                        className="text-blueGray-600 hover:text-blueGray-800 font-normal block pb-2 text-sm"
                         href="https://creative-tim.com/terms?ref=nnjs-footer"
                       >
                         Terms & Conditions
@@ -105,7 +105,7 @@ export default function Footer() {
                     </li>
                     <li>
                       <a
-                        className="text-blueGray-600 hover:text-blueGray-800 font-semibold block pb-2 text-sm"
+                        className="text-blueGray-600 hover:text-blueGray-800 font-normal block pb-2 text-sm"
                         href="https://creative-tim.com/privacy?ref=nnjs-footer"
                       >
                         Privacy Policy
@@ -113,7 +113,7 @@ export default function Footer() {
                     </li>
                     <li>
                       <a
-                        className="text-blueGray-600 hover:text-blueGray-800 font-semibold block pb-2 text-sm"
+                        className="text-blueGray-600 hover:text-blueGray-800 font-normal block pb-2 text-sm"
                         href="https://creative-tim.com/contact-us?ref=nnjs-footer"
                       >
                         Contact Us
