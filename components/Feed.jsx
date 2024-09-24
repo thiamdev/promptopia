@@ -99,14 +99,11 @@ const Feed = () => {
 
 
         </form>
-        <div className="flex-start w-full max-w-7xl mx-auto mt-10 flex-col md:flex-row items-start md:items-center gap-4 md:gap-8">
+        <div className="flex-start text-white w-full max-w-7xl mx-auto mt-20 flex-col md:flex-row items-start md:items-center gap-4 md:gap-8">
           <div>
-            <div className="grid gap-1">
-              <h2 className="text-3xl font-bold tracking-tight">Nos meilleures offres</h2>
-              <p className="text-muted-foreground">Découvrez nos propriétés les plus populaires.</p>
-            </div>
+          
             <div className="flex items-center gap-5 mt-10">
-              <div className="font-semibold border-b-2 border-gray-800">Tous</div>
+              <div className="font-semibold border-b-2 border-white">Tous</div>
               <div>Maison</div>
               <div>Appartement</div>
               <div>Hotel</div>

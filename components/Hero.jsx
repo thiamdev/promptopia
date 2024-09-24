@@ -60,10 +60,10 @@ export const Hero = () => {
                     ))}
                 </div>
             </section>
-            <div className="container w-full maw-w-5xl mx-auto px-4 md:px-6">
+            <div className="container w-full maw-w-5xl mx-auto px-4 pt-32 md:px-6">
                 <div className="grid gap-6 lg:grid-cols-[1fr_500px] lg:gap-12 xl:grid-cols-[1fr_550px]">
                     <div className="flex flex-col justify-center space-y-4">
-                        <div className="space-y-2 md:mt-0 mt-10">
+                        <div className="space-y-2 md:mt-0 my-auto">
 
                             <h1 className={`text-3xl text-white font-bold tracking-tighter sm:text-7xl xl:text-6xl/none transition-opacity duration-1000 ease-in-out ${fade ? "opacity-100" : "opacity-0" }`}
                             >
@@ -74,57 +74,11 @@ export const Hero = () => {
                             </p>
                         </div>
                     </div>
-                    <Carousel className="w-full max-w-md">
-                        <CarouselContent>
-                            <section className="hero-container-small">
-                                <div className="hero-slides" style={{ transform: `translateX(-${currentIndex * 100}%)` }}>
-
-                                </div>
-                            </section>
-
-
-                        </CarouselContent>
-
-                    </Carousel>
+                  
                 </div>
             </div>
             <div>
-                <div className="w-full max-w-6xl mx-auto bg-white rounded-md py-10 px-10 mt-8">
-                    <div className="flex justify-between overflow-hidden">
-                        <li className="flex-row list-none gap-4">
-                            <MountainSnowIcon className="w-6 h-6 mx-auto" />
-                            Mountain view
-                        </li>
-                        <li className="flex-row list-none gap-4">
-                            <WavesIcon className="w-6 h-6 mx-auto" />
-                            Beach access
-                        </li>
-                        <li className="flex-row list-none gap-4">
-                            <ChefHatIcon className="w-6 h-6 mx-auto" />
-                            Private chef
-                        </li>
-                        <li className="flex-row list-none gap-4">
-                            <WifiIcon className="w-6 h-6 mx-auto" />
-                            Wifi
-                        </li>
-                        <li className="flex-row list-none gap-4">
-                            <CarIcon className="w-6 h-6 mx-auto" />
-                            Parking
-                        </li>
-                        <li className="flex-row list-none gap-4">
-                            <CameraIcon className="w-6 h-6 mx-auto" />
-                            Security cameras
-                        </li>
-                        <li className="flex-row list-none gap-4">
-                            <AccessibilityIcon className="w-6 h-6 mx-auto" />
-                            Wheelchair accessible
-                        </li>
-                        <li className="flex-row list-none gap-4">
-                            <WindIcon className="w-6 h-6 mx-auto" />
-                            Patio
-                        </li>
-                    </div>
-                </div>
+                
             </div>
         </section>
     )
