@@ -60,10 +60,12 @@ const Profile = ({ name, desc, data, loading, handleEdit, handleDelete }) => {
         <div className='w-full max-w-5xl mx-auto '>
           <div className='w-full md:hidden block'>
             <div className='w-full h-fit'>
+              <Link href="/">
+                <div className="bg-slate-100 p-2 rounded-full z-10 absolute top-2 left-1">
+                  <ArrowLeft className="w-6 h-6" />
+                </div>
+              </Link>
 
-              <div className="bg-slate-100 p-2 rounded-full z-10 absolute top-2 left-1">
-                <ArrowLeft className="w-6 h-6" />
-              </div>
               <div className="absolute top-2 right-1 z-20 flex items-center gap-3">
                 <div onClick={handleLike} className={` ${liked ? 'bg-red-500 text-white' : 'bg-slate-100'} text-black p-2  rounded-full`}>
                   <Heart className="w-5 h-5" />
@@ -279,7 +281,7 @@ const Profile = ({ name, desc, data, loading, handleEdit, handleDelete }) => {
                   </Link>
                 </CardContent>
               </Card>
-          
+
 
               <div className="flex items-center gap-6">
                 <div className="flex items-center justify-center w-12 h-12">
@@ -346,59 +348,59 @@ const Profile = ({ name, desc, data, loading, handleEdit, handleDelete }) => {
                     </>
                   ) : (
                     <>
-                    {data?.dispo?.Mountain === true && (
-                       <li className="flex gap-4">
-                        <MountainSnowIcon className="w-6 h-6" />
-                        Mountain view
-                      </li>
-                    )}
-                    {data?.dispo?.beach === true && (
+                      {data?.dispo?.Mountain === true && (
                         <li className="flex gap-4">
-                        <WavesIcon className="w-6 h-6" />
-                        Beach access
-                      </li>
-                    )}
-                     {data?.dispo?.chef === true && (
-                      <li className="flex gap-4">
-                        <ChefHatIcon className="w-6 h-6" />
-                        Private chef
-                      </li>
-                    )}
+                          <MountainSnowIcon className="w-6 h-6" />
+                          Mountain view
+                        </li>
+                      )}
+                      {data?.dispo?.beach === true && (
+                        <li className="flex gap-4">
+                          <WavesIcon className="w-6 h-6" />
+                          Beach access
+                        </li>
+                      )}
+                      {data?.dispo?.chef === true && (
+                        <li className="flex gap-4">
+                          <ChefHatIcon className="w-6 h-6" />
+                          Private chef
+                        </li>
+                      )}
                       {data?.dispo?.wifi === true && (
-                       <li className="flex gap-4">
-                        <WifiIcon className="w-6 h-6" />
-                        Wifi
-                      </li>
-                    )}
-                     {data?.dispo?.parking === true && (
-                       <li className="flex gap-4">
-                        <CarIcon className="w-6 h-6" />
-                        Parking
-                      </li>
-                    )}
-                       {data?.dispo?.camera === true && (
                         <li className="flex gap-4">
-                        <CameraIcon className="w-6 h-6" />
-                        Security cameras
-                      </li>
-                    )}
-                     {data?.dispo?.wheelchair === true && (
-                       <li className="flex gap-4">
-                        <AccessibilityIcon className="w-6 h-6" />
-                        Wheelchair accessible
-                      </li>
-                    )}
-                     {data?.dispo?.patio === true && (
-                       <li className="flex gap-4">
-                        <WindIcon className="w-6 h-6" />
-                        Patio
-                      </li>
-                    )}
-                     
-                     
-                    
-                     
-                     
+                          <WifiIcon className="w-6 h-6" />
+                          Wifi
+                        </li>
+                      )}
+                      {data?.dispo?.parking === true && (
+                        <li className="flex gap-4">
+                          <CarIcon className="w-6 h-6" />
+                          Parking
+                        </li>
+                      )}
+                      {data?.dispo?.camera === true && (
+                        <li className="flex gap-4">
+                          <CameraIcon className="w-6 h-6" />
+                          Security cameras
+                        </li>
+                      )}
+                      {data?.dispo?.wheelchair === true && (
+                        <li className="flex gap-4">
+                          <AccessibilityIcon className="w-6 h-6" />
+                          Wheelchair accessible
+                        </li>
+                      )}
+                      {data?.dispo?.patio === true && (
+                        <li className="flex gap-4">
+                          <WindIcon className="w-6 h-6" />
+                          Patio
+                        </li>
+                      )}
+
+
+
+
+
                     </>)}
 
 
@@ -441,7 +443,7 @@ const Profile = ({ name, desc, data, loading, handleEdit, handleDelete }) => {
                     <div className="skeleton h-6 w-64 my-3"></div>
                   ) : (
                     <div className="flex gap-2">
-                   <MapPinHouse className="w-6 h-6 " /> {data.address}
+                      <MapPinHouse className="w-6 h-6 " /> {data.address}
                     </div>
 
                   )}
@@ -504,7 +506,7 @@ const Profile = ({ name, desc, data, loading, handleEdit, handleDelete }) => {
                     )}
                   </CardTitle>
                 </CardHeader>
-                
+
               </Card>
             </div>
           </section>
