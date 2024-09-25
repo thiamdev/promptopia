@@ -17,7 +17,7 @@ const BottomNav = () => {
                 <Search className="mx-auto w-4 h-4"/>
                 <h1>Explorer</h1>
                 </Link>
-                <Link href="/busApp/historique" className={`${pathName === "/busApp/historique" ? "text-white font-semibold bg-blue-800 flex gap-1 items-center justify-center p-3 shadow-lg shadow-blue-500/75  rounded-full    " : ""} `}>
+                <Link href="/busApp/historique" className={`${pathName === "/profile/create-prompt" ? "text-white font-semibold bg-blue-800 flex gap-1 items-center justify-center p-3 shadow-lg shadow-blue-500/75  rounded-full    " : ""} `}>
                 <User className="mx-auto w-4 h-4"/>
                 <h1>Connexion</h1>
                 </Link>

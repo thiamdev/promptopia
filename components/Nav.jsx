@@ -46,7 +46,7 @@ export default function Navbar({ handleSearchChange, searchText }) {
 
                     {session?.user ? (
                         <div className="flex gap-3 md:gap-5  items-center">
-                            <Link href="/create-prompt" className="black_btn">
+                            <Link href="/profile/create-prompt" className="black_btn">
                                 Mettre son bien immo
                             </Link>
                             <div>
