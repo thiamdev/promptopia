@@ -2,7 +2,14 @@ import { connectToDB } from "@utils/database";
 import Prompt from "@models/prompt";
 
 
-export const POST = async () => {
+export const POST = async (req, {params}) => {
+
+    try {
+        connectToDB();
+       
+    } catch (error) {
+        
+    }
     
 }
 

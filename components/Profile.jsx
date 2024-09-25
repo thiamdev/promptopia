@@ -126,17 +126,17 @@ const Profile = ({ name, desc, data, loading, handleEdit, handleDelete }) => {
 
             </h1>
             <nav className="flex items-center justify-center gap-1 sm:ml-auto">
-              <Button asChild variant="ghost" size="sm" className="gap-1 underline rounded-md underline-offset-2">
+              <Button asChild variant="ghost" size="sm" className="gap-1  rounded-md underline-offset-2">
                 <a href="#">
                   <ShareIcon className="w-4 h-4" />
                   Partager
                 </a>
               </Button>
-              <Button asChild variant="ghost" size="sm" className="gap-1 underline rounded-md underline-offset-2">
-                <a href="#">
+              <Button size="sm" onClick={handleLike} className={` ${liked ? 'bg-red-500 text-white hover:bg-red-500' : 'bg-slate-100 text-black hover:bg-slate-100'}  p-2   gap-1  rounded-md `} >
+               
                   <HeartIcon className="w-4 h-4" />
                   Liker
-                </a>
+              
               </Button>
             </nav>
           </section>
@@ -224,8 +224,8 @@ const Profile = ({ name, desc, data, loading, handleEdit, handleDelete }) => {
               <Card>
                 <CardContent className="relative w-full flex items-center gap-6 p-4 sm:p-6">
                   <div className="avatar">
-                    <div className="ring-primary ring-offset-base-100 w-7 rounded-full ring ring-offset-2">
-                      <Image src="" width={47} height={47} />
+                    <div className="ring-primary  w-10 rounded-full">
+                      <Image src={data?.image} width={47} height={47} />
                     </div>
                   </div>
                   <div className="flex-1 font-semibold w-full hidden sm:flex md:hidden lg:flex">

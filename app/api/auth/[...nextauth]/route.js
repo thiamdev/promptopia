@@ -17,8 +17,10 @@ const handler = NextAuth({
       session.user.id = sessionUser._id.toString();
 
       return session;
+
+      
     },
-    async signIn({ account, profile, user, credentials }) {
+    async signIn({ account, profile, session, user, credentials }) {
       try {
         await connectToDB();
 
@@ -30,7 +32,9 @@ const handler = NextAuth({
             username: profile.name.replace(" ", "").toLowerCase(),
             image: profile.picture,
           });
+          return session
         }
+        
 
         return true
       } catch (error) {
