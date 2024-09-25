@@ -9,7 +9,7 @@ import { Button } from "@components/ui/button"
 import Link from "next/link"
 import { Card, CardContent, CardHeader, CardTitle } from "@components/ui/card"
 import Footer from './Footer'
-import { AccessibilityIcon, ArrowBigLeft, Bed, CameraIcon, CarIcon, ChefHatIcon, Forward, GripIcon, Heart, HeartIcon, HousePlus, MapPinHouse, MapPinIcon, MedalIcon, MountainSnowIcon, Quote, Share, ShareIcon, ShowerHead, StarIcon, WavesIcon, WifiIcon, WindIcon } from "lucide-react";
+import { AccessibilityIcon, ArrowBigLeft, ArrowLeft, Bed, CameraIcon, CarIcon, ChefHatIcon, Forward, GripIcon, Heart, HeartIcon, HousePlus, MapPinHouse, MapPinIcon, MedalIcon, MountainSnowIcon, Quote, Share, ShareIcon, ShowerHead, StarIcon, WavesIcon, WifiIcon, WindIcon } from "lucide-react";
 import { DialogDemo } from "./DialogDemo";
 import { useSession } from "next-auth/react";
 
@@ -62,7 +62,7 @@ const Profile = ({ name, desc, data, loading, handleEdit, handleDelete }) => {
             <div className='w-full h-fit'>
 
               <div className="bg-slate-100 p-2 rounded-full z-10 absolute top-2 left-1">
-                <ArrowBigLeft className="w-6 h-6" />
+                <ArrowLeft className="w-6 h-6" />
               </div>
               <div className="absolute top-2 right-1 z-20 flex items-center gap-3">
                 <div onClick={handleLike} className={` ${liked ? 'bg-red-500 text-white' : 'bg-slate-100'} text-black p-3  rounded-full`}>
@@ -76,28 +76,29 @@ const Profile = ({ name, desc, data, loading, handleEdit, handleDelete }) => {
 
 
               <Carousel className="w-full h-auto">
-                <CarouselContent>
-                  {loading ? (
 
-                    <div className="skeleton h-[45vh] w-full"></div>
+                {loading ? (
 
-                  ) : (
-                    <div>
-                      {data?.images?.map((item, index) => (
-                        <CarouselItem key={index}>
-                          <Image
-                            src={item}
-                            alt={index}
-                            width={100}
-                            height={100}
-                            className="aspect-video object-cover w-[100vw] h-auto "
-                          />
-                        </CarouselItem>
-                      ))}
-                    </div>
-                  )}
+                  <div className="skeleton h-[45vh] w-full"></div>
 
-                </CarouselContent>
+                ) : (
+                  <CarouselContent>
+                    {data?.images?.map((item, index) => (
+                      <CarouselItem key={index} className="w-full">
+                        <Image
+                          src={item}
+                          alt={index}
+                          width={100}
+                          height={100}
+                          className="aspect-video object-cover w-[100vw] h-auto "
+                        />
+                      </CarouselItem>
+                    ))}
+
+                  </CarouselContent>
+                )}
+
+
 
               </Carousel>
               <div className='w-full lg:hidden py-3 font-medium text-2xl px-3'>
@@ -221,19 +222,19 @@ const Profile = ({ name, desc, data, loading, handleEdit, handleDelete }) => {
                 </p>
               </div>
               <Card>
-                <CardContent className="relative flex items-center gap-6 p-4 sm:p-6">
+                <CardContent className="relative w-full flex items-center gap-6 p-4 sm:p-6">
                   <div className="avatar">
                     <div className="ring-primary ring-offset-base-100 w-7 rounded-full ring ring-offset-2">
                       <Image src="" width={47} height={47} />
                     </div>
                   </div>
-                  <div className="flex-1 font-semibold max-w-[16rem] hidden sm:flex md:hidden lg:flex">
+                  <div className="flex-1 font-semibold w-full hidden sm:flex md:hidden lg:flex">
                     {loading ? (
                       <div className="skeleton h-7 w-64"></div>
                     ) : (
-                      <>
+                      <div className="w-full">
                         {data?.profil?.[0] ? (data?.profil?.[0]) : (data?.username)}
-                      </>
+                      </div>
 
                     )}
 
@@ -403,7 +404,7 @@ const Profile = ({ name, desc, data, loading, handleEdit, handleDelete }) => {
                 </ul>
 
               </div>
-           
+
               <div className="grid gap-8 w-full">
                 {loading ? (
                   <>
@@ -419,7 +420,7 @@ const Profile = ({ name, desc, data, loading, handleEdit, handleDelete }) => {
 
                         ) : (
                           <>
-                           
+
                           </>)}
                       </div>
                     </div>
