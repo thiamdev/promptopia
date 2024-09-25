@@ -4,6 +4,7 @@ import "@styles/globals.css";
 import Provider from "@components/Provider";
 import Footer from "@components/Footer";
 import { Suspense } from "react";
+import BottomNav from "@components/BottomNav";
 
 
 export const metadata = {
@@ -25,6 +26,10 @@ const RootLayout = ({ children }) => {
             </header>
             <main>
               {children}
+
+              <div className="w-full sm:hidden block fixed bottom-0 bg-white">
+                <BottomNav/>
+              </div>
             </main>
            
           </div>
