@@ -100,7 +100,7 @@ const Feed = () => {
 
         </form>
         <div className="flex-start text-white w-full max-w-7xl mx-auto mt-20 flex-col md:flex-row items-start md:items-center gap-4 md:gap-8">
-          <div>
+          <div className="w-fit mx-auto">
           
             <div className="flex items-center gap-5 mt-10">
               <div className="font-semibold border-b-2 border-white">Tous</div>
@@ -112,10 +112,10 @@ const Feed = () => {
 
         </div>
         <div className="w-full max-w-7xl mx-auto h-fit">
-          <div className="prompt_layout ">
+          <div className="prompt_layout mx-3">
             {loading && [1, 2, 3, 4, 5, 6, 7, 8, 9,10, 11, 12].map((items, index) => (
 
-              <div className="flex w-[300px] mt-10 flex-col gap-4" key={index}>
+              <div className="flex w-full  mt-10 flex-col gap-4" key={index}>
                 <div className="skeleton h-56 w-full"></div>
                 <div className="skeleton h-4 w-28"></div>
                 <div className="skeleton h-4 w-full"></div>
