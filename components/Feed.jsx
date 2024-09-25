@@ -73,6 +73,7 @@ const Feed = () => {
     setSearchText(e.target.value);
 
     setSearchTimeout(
+      
       setTimeout(() => {
         const searchResult = filterPrompts(e.target.value);
         setSearchedResults(searchResult);
@@ -103,10 +104,10 @@ const Feed = () => {
           <div className="w-fit mx-auto">
 
             <div className="flex items-center gap-5 mt-10">
-              <div className="font-semibold border-b-2 border-white">Tous</div>
-              <div>Maison</div>
-              <div>Appartement</div>
-              <div>Hotel</div>
+              <div onClick={() => setSearchText('')} className={`${searchText === '' && "font-semibold border-b-2 border-white"} cursor-default`}>Tous</div>
+              <div onClick={() => setSearchText('maison')} className={`${searchText === 'maison' && "font-semibold border-b-2 border-white"} cursor-pointer`}>Maison</div>
+              <div onClick={() => setSearchText('appartement')} className={`${searchText === 'appartement' && "font-semibold border-b-2 border-white"} cursor-pointer`}>Appartement</div>
+              <div onClick={() => setSearchText('hotel')} className={`${searchText === 'hotel' && "font-semibold border-b-2 border-white"} cursor-pointer`}>Hotel</div>
             </div>
           </div>
 

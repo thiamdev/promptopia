@@ -90,7 +90,7 @@ export default function Navbar({ handleSearchChange, searchText }) {
                                                                 onClick={() => signIn(provider.id)}
                                                                 className="black_btn"
                                                             >
-                                                                Sign In
+                                                                Se connecter
                                                             </button>
                                                         ))}
                                                 </>
@@ -111,7 +111,7 @@ export default function Navbar({ handleSearchChange, searchText }) {
                                         onClick={() => signIn(provider.id)}
                                         className="black_btn"
                                     >
-                                        Sign In
+                                       Se Connecter
                                     </button>
                                 ))}
                         </>

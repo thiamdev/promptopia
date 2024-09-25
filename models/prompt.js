@@ -82,27 +82,27 @@ const PromptSchema = new Schema({
   dispo: {
     wifi: {
       type: Boolean,
-      default: false
+    
     },
     pool: {
       type: Boolean,
-      default: false
+     
     },
     Mountain: {
       type: Boolean,
-      default: false
+     
     },
     Beach: {
       type: Boolean,
-      default: false
+    
     },
     chef: {
       type: Boolean,
-      default: false
+     
     },
     Parking: {
       type: Boolean,
-      default: false
+     
     },
     camera: {
       type: Boolean,
