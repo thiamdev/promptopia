@@ -55,17 +55,17 @@ const Profile = ({ name, desc, data, loading, handleEdit, handleDelete }) => {
   const formattedNumber = new Intl.NumberFormat('fr-FR').format(data.price);
   return (
 
-    <section>
+    <section className="w-full">
       <div className="bg-white ">
         <div className='w-full max-w-5xl mx-auto '>
-          <div className='w-full sm:hidden block'>
+          <div className='w-full md:hidden block'>
             <div className='w-full h-fit'>
 
               <div className="bg-slate-100 p-2 rounded-full z-10 absolute top-2 left-1">
                 <ArrowLeft className="w-6 h-6" />
               </div>
               <div className="absolute top-2 right-1 z-20 flex items-center gap-3">
-                <div onClick={handleLike} className={` ${liked ? 'bg-red-500 text-white' : 'bg-slate-100'} text-black p-3  rounded-full`}>
+                <div onClick={handleLike} className={` ${liked ? 'bg-red-500 text-white' : 'bg-slate-100'} text-black p-2  rounded-full`}>
                   <Heart className="w-5 h-5" />
                 </div>
                 <div className="bg-slate-100 p-2 rounded-full ">
@@ -97,8 +97,6 @@ const Profile = ({ name, desc, data, loading, handleEdit, handleDelete }) => {
 
                   </CarouselContent>
                 )}
-
-
 
               </Carousel>
               <div className='w-full lg:hidden py-3 font-medium text-2xl px-3'>
@@ -140,8 +138,8 @@ const Profile = ({ name, desc, data, loading, handleEdit, handleDelete }) => {
               </Button>
             </nav>
           </section>
-          <section className="relative bg-muted h-[70vh] sm:block hidden">
-            <div className="lg:grid gap-2 h-full sm:grid-cols-4 hidden">
+          <section className="relative bg-muted h-[70vh] md:block hidden">
+            <div className="md:grid gap-2 h-full sm:grid-cols-4 hidden">
               {data?.images?.slice(0, 5).map((image, index) => (
                 <Link
                   key={index}
@@ -170,9 +168,9 @@ const Profile = ({ name, desc, data, loading, handleEdit, handleDelete }) => {
             </Button>
           </section>
 
-          <section className="py-8 grid md:grid-cols-2 lg:grid-cols-[1fr_400px] gap-8 sm:gap-12 md:gap-16 items-start">
+          <section className="pb-8 md:pt-8 w-full grid md:grid-cols-2 md:w-full gap-8 sm:gap-12 md:gap-16 items-start">
             <div className="grid row-start-2 gap-8 md:row-start-auto">
-              <div className="flex-col hidden gap-1 md:flex">
+              <div className="flex-col hidden gap-1 sm:flex">
                 <h2 className="text-2xl font-semibold">
                   {loading ? (
                     <div className="skeleton h-6 w-64 my-3"></div>
@@ -184,14 +182,14 @@ const Profile = ({ name, desc, data, loading, handleEdit, handleDelete }) => {
                   )}
 
                 </h2>
-                <p className="text-muted-foreground flex gap-5">
+                <p className="text-gray-800 flex gap-5">
                   {loading ? (
                     <div className="skeleton h-3 w-20"></div>
                   ) : (
 
                     <div className="flex items-center gap-3 font-semibold">
                       <Bed className="w-5 h-5 " />
-                      {data.bedrooms} bedroom ·
+                      {data.bedrooms} Lie ·
                     </div>
 
                   )}
@@ -201,7 +199,7 @@ const Profile = ({ name, desc, data, loading, handleEdit, handleDelete }) => {
 
                     <div className="flex items-center gap-3 font-semibold">
                       <HousePlus className="w-5 h-5" />
-                      {data.livingRooms} livingRooms ·
+                      {data.livingRooms} Chambre ·
                     </div>
 
 
@@ -213,7 +211,7 @@ const Profile = ({ name, desc, data, loading, handleEdit, handleDelete }) => {
 
                     <div className="flex items-center gap-3 font-semibold">
                       <ShowerHead className="w-5 h-5" />
-                      {data.bathrooms} bath
+                      {data.bathrooms} Salle de bain
                     </div>
 
                   )}
@@ -281,25 +279,8 @@ const Profile = ({ name, desc, data, loading, handleEdit, handleDelete }) => {
                   </Link>
                 </CardContent>
               </Card>
-              <div className="flex items-center gap-6">
-                <div className="flex items-center justify-center w-12 h-12">
+          
 
-                </div>
-                <div className="grid gap-0.5">
-                  <div className="font-semibold">Hosted by Catherine</div>
-                  <div className="text-sm text-muted-foreground">Joined in 2010 · Superhost</div>
-                </div>
-              </div>
-
-              <div className="flex items-center gap-6">
-                <div className="flex items-center justify-center w-12 h-12">
-
-                </div>
-                <div className="grid gap-0.5">
-                  <div className="font-semibold">Free cancellation for 48 hours</div>
-                  <div className="text-sm text-muted-foreground">Get a full refund if you change your mind.</div>
-                </div>
-              </div>
               <div className="flex items-center gap-6">
                 <div className="flex items-center justify-center w-12 h-12">
                   <MedalIcon className="w-7 h-7" />
@@ -342,7 +323,7 @@ const Profile = ({ name, desc, data, loading, handleEdit, handleDelete }) => {
               )}
 
               <div className="grid gap-8">
-                <h3 className="text-xl font-semibold">What this place offers</h3>
+                <h3 className="text-xl font-semibold">Ce que cet endroit offre</h3>
                 <ul className="grid gap-6 lg:grid-cols-2">
                   {loading ? (
                     <>
@@ -365,38 +346,59 @@ const Profile = ({ name, desc, data, loading, handleEdit, handleDelete }) => {
                     </>
                   ) : (
                     <>
-                      <li className="flex gap-4">
+                    {data?.dispo?.Mountain === true && (
+                       <li className="flex gap-4">
                         <MountainSnowIcon className="w-6 h-6" />
                         Mountain view
                       </li>
-                      <li className="flex gap-4">
+                    )}
+                    {data?.dispo?.beach === true && (
+                        <li className="flex gap-4">
                         <WavesIcon className="w-6 h-6" />
                         Beach access
                       </li>
+                    )}
+                     {data?.dispo?.chef === true && (
                       <li className="flex gap-4">
                         <ChefHatIcon className="w-6 h-6" />
                         Private chef
                       </li>
-                      <li className="flex gap-4">
+                    )}
+                      {data?.dispo?.wifi === true && (
+                       <li className="flex gap-4">
                         <WifiIcon className="w-6 h-6" />
                         Wifi
                       </li>
-                      <li className="flex gap-4">
+                    )}
+                     {data?.dispo?.parking === true && (
+                       <li className="flex gap-4">
                         <CarIcon className="w-6 h-6" />
                         Parking
                       </li>
-                      <li className="flex gap-4">
+                    )}
+                       {data?.dispo?.camera === true && (
+                        <li className="flex gap-4">
                         <CameraIcon className="w-6 h-6" />
                         Security cameras
                       </li>
-                      <li className="flex gap-4">
+                    )}
+                     {data?.dispo?.wheelchair === true && (
+                       <li className="flex gap-4">
                         <AccessibilityIcon className="w-6 h-6" />
                         Wheelchair accessible
                       </li>
-                      <li className="flex gap-4">
+                    )}
+                     {data?.dispo?.patio === true && (
+                       <li className="flex gap-4">
                         <WindIcon className="w-6 h-6" />
                         Patio
                       </li>
+                    )}
+                     
+                     
+                    
+                     
+                     
                     </>)}
 
 
@@ -412,7 +414,7 @@ const Profile = ({ name, desc, data, loading, handleEdit, handleDelete }) => {
                   </>
                 ) : (
                   <>
-                    <div className="w-[500px] ">
+                    <div className="w-full ">
                       <div className="flex gap-3 py-3 px-2 overflow-hidden">
                         {!data.comments ? (
 
@@ -431,29 +433,29 @@ const Profile = ({ name, desc, data, loading, handleEdit, handleDelete }) => {
               </div>
             </div>
 
-            <div className="grid row-start-1 gap-4 md:row-start-auto">
+            <div className="grid w-full row-start-1 gap-4 md:row-start-auto">
               <div className="flex flex-col gap-1 sm:hidden">
                 <h2 className="font-semibold sm:text-2xl">
 
                   {loading ? (
                     <div className="skeleton h-6 w-64 my-3"></div>
                   ) : (
-                    <>
-                      {data.address}
-                    </>
+                    <div className="flex gap-2">
+                   <MapPinHouse className="w-6 h-6 " /> {data.address}
+                    </div>
 
                   )}
 
                 </h2>
-                <p className="flex gap-3 text-sm sm:text-base text-muted-foreground">
+                <p className="flex gap-3 text-sm sm:text-base text-gray-800">
 
                   {loading ? (
                     <div className="skeleton h-3 w-20"></div>
                   ) : (
 
                     <div className="flex items-center gap-2">
-                      <Bed className="w-4 h-4 " />
-                      {data.bedrooms} bedroom ·
+                      <Bed className="w-5 h-5 " />
+                      {data.bedrooms} Lie ·
                     </div>
 
                   )}
@@ -462,8 +464,8 @@ const Profile = ({ name, desc, data, loading, handleEdit, handleDelete }) => {
                   ) : (
 
                     <div className="flex items-center gap-3">
-                      <HousePlus className="w-4 h-4" />
-                      {data.livingRooms} livingRooms ·
+                      <HousePlus className="w-5 h-5" />
+                      {data.livingRooms} Chambre ·
                     </div>
 
 
@@ -474,8 +476,8 @@ const Profile = ({ name, desc, data, loading, handleEdit, handleDelete }) => {
                   ) : (
 
                     <div className="flex items-center gap-3">
-                      <ShowerHead className="w-4 h-4" />
-                      {data.bathrooms} bath
+                      <ShowerHead className="w-5 h-5" />
+                      {data.bathrooms} Salle de Bain
                     </div>
 
                   )}
@@ -483,7 +485,7 @@ const Profile = ({ name, desc, data, loading, handleEdit, handleDelete }) => {
 
                 </p>
               </div>
-              <Card>
+              <Card className="w-full">
                 <CardHeader>
                   <CardTitle>
                     {loading ? (
@@ -494,25 +496,15 @@ const Profile = ({ name, desc, data, loading, handleEdit, handleDelete }) => {
 
                     ) : (
                       <div className="flex justify-between items-center">
-                        <div>{data.saleType}:</div>
-                        <span className=" capitalize"> {formattedNumber} <span className="text-sm">FCFA</span></span>
+                        <div className="capitalize text-base">{data.saleType}</div>
+                        <span className=""> {formattedNumber} <span className="text-sm">FCFA</span></span>
 
                       </div>
 
                     )}
                   </CardTitle>
                 </CardHeader>
-                <CardContent className="grid gap-6">
-                  <form>
-                    <div className="grid gap-2">
-                      <div className="flex gap-2">
-
-
-                      </div>
-
-                    </div>
-                  </form>
-                </CardContent>
+                
               </Card>
             </div>
           </section>

@@ -3,13 +3,13 @@ import "@styles/globals.css";
 import { CircleHelp, Dot, Globe, Headset, Home, LayoutDashboard, LogOut, Menu, Settings, UploadCloud, User } from "lucide-react";
 import Link from "next/link";
 import { usePathname, useRouter } from "next/navigation";
-import { useState } from "react";
 
 
 
 const RootLayout = ({ children }) => {
 
   const pathName = usePathname();
+  const isProfilePost = pathName.startsWith('/profile/post/');
 
   return (
     <html lang="en">
@@ -28,7 +28,8 @@ const RootLayout = ({ children }) => {
               <input id="my-drawer-4" type="checkbox" className="drawer-toggle" />
               <div className="drawer-content">
                 {/* Page content here */}
-                <label htmlFor="my-drawer-4" className="">
+                
+                <label htmlFor="my-drawer-4" className={`${isProfilePost && "hidden"}`}>
                   <div className="py-2 px-3 absolute top-2 right-3 rounded-full bg-white">
                     <Menu className="w-6 h-6  text-black z-10" />
 
