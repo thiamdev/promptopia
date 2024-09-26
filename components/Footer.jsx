@@ -21,7 +21,7 @@ export default function Footer() {
               </h5>
               <div className="mt-6 flex lg:mb-0 mb-6">
                 <button
-                  className="bg-white flex text-blue-500 shadow-lg font-normal h-10 w-10 items-center justify-center align-center rounded-full outline-none focus:outline-none mr-2"
+                  className="bg-white flex  text-orange-500 shadow-lg font-normal h-10 w-10 items-center justify-center align-center rounded-full outline-none focus:outline-none mr-2"
                   type="button"
                 >
                   <Facebook/>
@@ -33,7 +33,7 @@ export default function Footer() {
                 <Instagram/>
                 </button>
                 <button
-                  className="bg-white flex text-blue-500 shadow-lg font-normal h-10 w-10 items-center justify-center align-center rounded-full outline-none focus:outline-none mr-2"
+                  className="bg-white flex  text-orange-500 shadow-lg font-normal h-10 w-10 items-center justify-center align-center rounded-full outline-none focus:outline-none mr-2"
                   type="button"
                 >
                   <Linkedin/>

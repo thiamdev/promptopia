@@ -32,7 +32,7 @@ export default function Navbar({ handleSearchChange, searchText }) {
                         <div className='w-[60px] h-[38px] px-3  m-1 cursor-pointer flex items-center justify-center text-black  rounded-full'>
                             <Search className='w-6 h-6 ' />
                         </div>
-                       <p className="pr-5">|</p>
+                        <p className="pr-5">|</p>
                         <input type="search" name="" value={searchText} onChange={handleSearchChange} required placeholder='votre prochain destination' id=""
                             className='outline-none border-none w-full' />
 
@@ -63,19 +63,30 @@ export default function Navbar({ handleSearchChange, searchText }) {
                             </Link>
                         </div>
                     ) : (
-                        <>
+                        <div className="md:block hidden">
                             {providers &&
                                 Object.values(providers).map((provider) => (
-                                    <button
-                                        type="button"
-                                        key={provider.name}
-                                        onClick={() => signIn(provider.id)}
-                                        className="black_btn"
-                                    >
-                                        Se connecter
-                                    </button>
+                                    <div className="flex items-center gap-2">
+                                        <button
+                                            type="button"
+                                            key={provider.name}
+                                            onClick={() => signIn(provider.id)}
+                                            className="black_btn"
+                                        >
+                                            Se connecter
+                                        </button>
+                                        <button
+                                            type="button"
+                                            key={provider.name}
+                                            onClick={() => signIn(provider.id)}
+                                            className="black_btn"
+                                        >
+                                          Creer un compte
+                                        </button>
+                                    </div>
+
                                 ))}
-                        </>
+                        </div>
                     )}
 
                 </div>

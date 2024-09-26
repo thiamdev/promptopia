@@ -1,18 +1,19 @@
 import "@styles/globals.css";
-
-
 import Provider from "@components/Provider";
-import Footer from "@components/Footer";
-import { Suspense } from "react";
 import BottomNav from "@components/BottomNav";
 
 
 export const metadata = {
-  title: "Promptopia",
-  description: "Discover & Share AI Prompts",
+  title: "Imo 2p ",
+  description: "vVender vos bien avec 2pimo ",
 };
 
 const RootLayout = ({ children }) => {
+  
+
+ 
+
+
   return (
     <html lang="en">
       <body suppressHydrationWarning={true}>
@@ -27,7 +28,7 @@ const RootLayout = ({ children }) => {
             <main>
               {children}
 
-              <div className="w-full sm:hidden block fixed bottom-0 bg-white">
+              <div className="w-full sm:hidden block fixed bottom-0 border-t border-gray-200 bg-white">
                 <BottomNav/>
               </div>
             </main>
