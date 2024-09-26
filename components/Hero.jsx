@@ -24,7 +24,7 @@ export const Hero = () => {
 
     const [currentIndex, setCurrentIndex] = useState(0);
     const texts = [
-        "Bienvenue sur notre site",
+        "Vender rapidement et simplement avec imo",
         "Découvrez nos offres exclusives",
         "Nous offrons les meilleurs services",
 
@@ -34,23 +34,20 @@ export const Hero = () => {
 
 
     useEffect(() => {
-        const interval = setInterval(() => {
-            setCurrentIndex((prevIndex) => (prevIndex + 1) % images.length);
-        }, 8000); // Change d'image toutes les 6 secondes
-
+       
         const intervalText = setInterval(() => {
             setFade(false); // Commence par masquer l'élément
             setTimeout(() => {
-
+                setCurrentIndex((prevIndex) => (prevIndex + 1) % images.length);
                 setFade(true); // Restaure l'opacité après changement de texte
             }, 1000); // Délai pour laisser la transition de disparition se produire
         }, 8000); // Intervalle de 4000 ms
-        return () => clearInterval(interval), clearInterval(intervalText);
+        return () => clearInterval(interval);
     }, []);
 
 
     return (
-        <section className="w-[99vw] md:py-24 relative">
+        <section className="w-[100%] md:pt-24 relative">
             <section className="hero-container">
                 <div className="hero-slides" style={{ transform: `translateX(-${currentIndex * 100}%)` }}>
                     {images.map((src, index) => (
@@ -65,7 +62,7 @@ export const Hero = () => {
                     <div className="flex flex-col justify-center space-y-4">
                         <div className="space-y-2 md:mt-0 my-auto">
 
-                            <h1 className={`text-3xl text-white font-bold tracking-tighter sm:text-7xl xl:text-6xl/none transition-opacity duration-1000 ease-in-out ${fade ? "opacity-100" : "opacity-0" }`}
+                            <h1 className={`text-3xl text-white font-bold tracking-tighter sm:text-7xl xl:text-7xl/none transition-opacity duration-1000 ease-in-out ${fade ? "opacity-100" : "opacity-0"}`}
                             >
                                 {texts[currentIndex]}
                             </h1>
@@ -74,12 +71,12 @@ export const Hero = () => {
                             </p>
                         </div>
                     </div>
-                  
+                    <div className="w-full md:w-[500px] h-[310px] bg-white/50 rounded-xl">
+
+                    </div>
                 </div>
             </div>
-            <div>
-                
-            </div>
+
         </section>
     )
 }
