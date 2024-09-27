@@ -93,7 +93,7 @@ const Feed = () => {
           searchText={searchText}
           handleSearchChange={handleSearchChange}
         />
-        <Hero />
+        <Hero loading={loading}/>
         <form className="relative w-full flex-center">
 
 
@@ -101,8 +101,8 @@ const Feed = () => {
         <div className="flex-start  w-full max-w-7xl mx-auto mt-20 flex-col md:flex-row items-start md:items-center gap-4 md:gap-8">
           <div className="w-auto mx-auto">
              
-            <div className="flex items-center md:gap-5 gap-2 text-gray-800 bg-white  rounded-full md:p-2 p-1 px-2 md:pr-4 pr-1">
-            <div className="flex items-center gap-3 font-bold bg-orange-600 rounded-full p-2 px-2 text-white">
+            <div className=" flex items-center md:gap-5 gap-2 overflow-x-auto text-gray-800 bg-white  rounded-full md:p-2 p-1 px-1 md:pr-4 pr-2">
+            <div className="flex items-center gap-3 font-bold bg-orange-600 rounded-full p-2 px-2  text-white">
                  <h1><SlidersHorizontal className="w-5 h-5"/></h1>
                 Filter 
               </div>

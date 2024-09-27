@@ -7,7 +7,7 @@ import Image from 'next/image';
 import { Carousel, CarouselContent, CarouselItem, CarouselPrevious, CarouselNext } from "@/components/ui/carousel"
 
 
-import { AccessibilityIcon, CameraIcon, CarIcon, ChefHatIcon, MountainSnowIcon, WavesIcon, WifiIcon, WindIcon } from "lucide-react"
+import { AccessibilityIcon, Bed, CameraIcon, CarIcon, ChefHatIcon, HousePlus, MapPinHouse, MountainSnowIcon, ShowerHead, WavesIcon, WifiIcon, WindIcon } from "lucide-react"
 
 
 
@@ -18,7 +18,7 @@ const images = [
 
 ];
 
-export const Hero = () => {
+export const Hero = ({ loading }) => {
 
 
 
@@ -34,7 +34,7 @@ export const Hero = () => {
 
 
     useEffect(() => {
-       
+
         const intervalText = setInterval(() => {
             setFade(false); // Commence par masquer l'élément
             setTimeout(() => {
@@ -71,7 +71,75 @@ export const Hero = () => {
                             </p>
                         </div>
                     </div>
-                    <div className="w-full md:w-[500px] h-[310px] bg-white/50 rounded-xl">
+                    <div className="relative w-full md:w-[500px] h-[300px] p-3 border border-neutral-400 bg-white/20 backdrop-brightness-110 rounded-xl">
+                        <div className="flex items-center gap-3">
+                            <div className="bg-white text-white w-14 h-14 rounded-full"></div>
+                            {loading ? (
+                                <div className="skeleton h-5 w-24"></div>
+                            ) : (
+                                <h1 className="font-bold text-white text-xl">SeneginDia</h1>
+                            )}
+
+                        </div>
+
+                        <div className="flex flex-col gap-1 ">
+                            <h2 className="text-md text-white my-2 font-semibold">
+                                {loading ? (
+                                    <div className="skeleton h-5 w-64 my-3"></div>
+                                ) : (
+                                    <div className="flex gap-2 items-center">
+                                        <MapPinHouse className="w-6 h-6" /> 
+                                        Dakar, Liberté 6
+                                    </div>
+
+                                )}
+
+                            </h2>
+                            <p className="flex flex-col text-white my-3  gap-2">
+                                {loading ? (
+                                    <div className="skeleton h-5 w-32"></div>
+                                ) : (
+
+                                    <div className="flex items-center gap-3 font-semibold">
+                                        <Bed className="w-5 h-5 " />
+                                        2 Lie
+                                    </div>
+
+                                )}
+                                {loading ? (
+                                    <div className="skeleton h-5 w-32"></div>
+                                ) : (
+
+                                    <div className="flex items-center gap-3 font-semibold">
+                                        <HousePlus className="w-5 h-5" />
+                                        2 Chambre
+                                    </div>
+
+
+
+                                )}
+                                {loading ? (
+                                    <div className="skeleton h-5 w-32"></div>
+                                ) : (
+
+                                    <div className="flex items-center gap-3 font-semibold">
+                                        <ShowerHead className="w-5 h-5" />
+                                        1 Salle de bain
+                                    </div>
+
+                                )}
+
+
+                            </p>
+                        </div>
+                        <div className="absolute bottom-3 right-3">
+                            {loading ? (
+                                <div className="skeleton h-10 w-36 rounded-full"></div>
+                            ) : (
+                                <button className=" p-2 px-4 bg-orange-600 text-xs font-semibold rounded-full text-white">Visiter maintenant </button>
+
+                            )}
+                        </div>
 
                     </div>
                 </div>

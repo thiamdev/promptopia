@@ -32,7 +32,7 @@ const PromptCard = ({ post, handleTagClick, handleEdit, handleDelete }) => {
           <div className=' my-2 w-full'>
 
             <div className='h-fit bg-white relative rounded-xl overflow-hidden md:mx-0 mx-4  border border-gray-300 '>
-              <div className='w-full h-[200px] relative'>
+              <div className='w-full h-[200px] bg-slate-200 relative'>
                 <Image
                   src={post?.images?.[0]}
                   width={100}
