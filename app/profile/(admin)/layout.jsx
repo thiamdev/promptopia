@@ -24,13 +24,13 @@ const RootLayout = ({ children }) => {
           </header>
           <main>
 
-            <div className="drawer z-10 w-[280px]">
+            <div className="drawer z-10 w-[280px] md:hidden block">
               <input id="my-drawer-4" type="checkbox" className="drawer-toggle" />
-              <div className="drawer-content">
+              <div className="drawer-content w-full flex items-center justify-end py-5 bg-white border-b border-gray-200 ">
                 {/* Page content here */}
 
-                <label htmlFor="my-drawer-4" className={`${isProfilePost && "hidden"} md:hidden block`}>
-                  <div className="py-2 px-3 absolute top-2 right-3 rounded-full bg-white">
+                <label htmlFor="my-drawer-4" className={`${isProfilePost && "hidden"} `}>
+                  <div className="py-2 px-3  rounded-full bg-white">
                     <Menu className="w-6 h-6  text-black z-10" />
 
                   </div>
@@ -121,8 +121,8 @@ const RootLayout = ({ children }) => {
                 </ul>
               </div>
             </div>
-            <div className="flex w-full h-[100dvh] bg-neutral-50 gap-5">
-              <div className="z-20">
+            <div className="flex w-full h-[100dvh]  bg-neutral-50 gap-5">
+              <div className="z-20 md:block hidden">
                 <ul className="menu bg-white text-base-content h-full  w-80 p-4">
                   <div className="my-3 font-semibold text-[17px]">
                     Dima Groupe

@@ -151,7 +151,7 @@ const ChartOne = () => {
           </div>
           <div className="flex min-w-47.5">
             <span className="mr-2 mt-1 flex h-4 w-full max-w-4 items-center justify-center rounded-full border border-secondary">
-              <span className="block h-2.5 w-full max-w-2.5 rounded-full bg-secondary"></span>
+              <span className="block h-2 w-full max-w-2 rounded-full bg-secondary"></span>
             </span>
             <div className="w-full">
               <p className="font-semibold text-secondary">Total Sales</p>
