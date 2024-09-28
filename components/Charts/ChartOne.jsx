@@ -1,4 +1,3 @@
-"use client";
 
 import { ApexOptions } from "apexcharts";
 import React from "react";
