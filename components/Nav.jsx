@@ -52,7 +52,7 @@ export default function Navbar({ handleSearchChange, searchText }) {
                             <div>
                                 <Bell className="w-5 h-5" />
                             </div>
-                            <Link href="/profile">
+                            <Link href="/profile/post">
                                 <Image
                                     src={session?.user.image}
                                     width={37}

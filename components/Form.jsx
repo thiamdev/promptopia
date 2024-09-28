@@ -450,7 +450,7 @@ const Form = ({ formData, setFormData, submitting,  handleSubmit }) => {
   };
 
   return (
-    <div className="relative h-[98vh] w-[99vw] max-w-6xl mx-auto flex flex-col justify-center items-center">
+    <div className="relative h-[98vh] w-full max-w-6xl mx-auto flex flex-col justify-center items-center">
      
         <Nav />
     <div className='w-full flex justify-center items-center'>

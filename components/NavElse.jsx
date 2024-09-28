@@ -23,7 +23,7 @@ export default function Navbar({ handleSearchChange, searchText }) {
     }, []);
 
     return (
-        <div className='border-b w-full fixed top-0 z-10  border-gray-300 bg-white'>
+        <div className='border-b w-full fixed top-0  border-gray-300 bg-white'>
 
             <div className='w-full max-w-7xl mx-auto px-3 h-[80px] flex items-center justify-between '>
                 <h1 className='text-orange-600  text-2xl font-bold flex items-center gap-2'><span><Building2 className='w-7 h-7' /></span>imo</h1>
@@ -44,7 +44,7 @@ export default function Navbar({ handleSearchChange, searchText }) {
                             <div>
                                 <Bell className="w-5 h-5" />
                             </div>
-                            <Link href="/profile">
+                            <Link href="/profile/post">
                                 <Image
                                     src={session?.user.image}
                                     width={37}
@@ -75,7 +75,7 @@ export default function Navbar({ handleSearchChange, searchText }) {
                                                     <div>
                                                         Notification
                                                     </div>
-                                                    <Link href="/profile">
+                                                    <Link href="/profile/post">
                                                         profile
                                                     </Link>
 

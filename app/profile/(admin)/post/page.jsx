@@ -64,47 +64,30 @@ const MyProfile = () => {
 
   return (
     <div>
-      <main className="profile-page ">
-        <section className="relative block h-[500px]">
-          <div
-            className="absolute top-0 w-full h-full bg-center bg-cover"
-            style={{
-              background:
-                "url('https://images.unsplash.com/photo-1499336315816-097655dcfbda?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2710&q=80')"
-            }}
-            
-          >
+      <main className="profile-page bg-white">
+        <section className="relative block  h-[500px]">
+          <div>
+          <Image
+              src={"/images/cover/cover-01.png"}
+              alt="profile cover"
+              className="h-full w-full rounded-tl-sm rounded-tr-sm object-cover object-center"
+              width={970}
+              height={260}
+              style={{
+                width: "100%",
+                height: "60%",
+              }}
+            />
            
-            <span
-              id="blackOverlay"
-              className="w-full h-full absolute opacity-50 bg-black"
-            ></span>
+        
           </div>
-          <div
-            className="top-auto bottom-0 left-0 right-0 w-full absolute pointer-events-none overflow-hidden h-16"
-            style={{ transform: "translateZ(0)" }}
-          >
-            <svg
-              className="absolute bottom-0 overflow-hidden"
-              xmlns="http://www.w3.org/2000/svg"
-              preserveAspectRatio="none"
-              version="1.1"
-              viewBox="0 0 2560 100"
-              x="0"
-              y="0"
-            >
-              <polygon
-                className="text-blueGray-200 fill-current"
-                points="2560 0 2560 100 0 100"
-              ></polygon>
-            </svg>
-          </div>
+         
         </section>
         <section className="relative py-16 bg-white">
           <div className="container mx-auto px-4">
             <div className="relative w-full  flex flex-col min-w-0 break-words bg-white mb-6 shadow-xl rounded-lg -mt-64">
             <div className="px-4 pb-6 w-full max-w-2xl mx-auto text-center lg:pb-8 xl:pb-11.5">
-            <div className="relative z-30 mx-auto -mt-20 h-30 w-full max-w-30 rounded-full bg-white/40 p-1 backdrop-blur sm:h-44 sm:max-w-44 sm:p-3">
+            <div className="relative z-30 mx-auto -mt-20 h-30 w-full max-w-32 rounded-full bg-white/40 p-1 backdrop-blur sm:h-[10rem] sm:max-w-[10rem] sm:p-3">
               <div className="relative drop-shadow-2">
                 <Image
                   src={"/images/user/user-06.png"}
