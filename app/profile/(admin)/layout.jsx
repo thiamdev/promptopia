@@ -122,7 +122,7 @@ const RootLayout = ({ children }) => {
               </div>
             </div>
             <div className="flex w-full h-[100dvh]  bg-neutral-50 gap-5">
-              <div className="z-20 md:block hidden">
+              <div  className={`${isProfilePost ? "hidden" : " z-20 md:block hidden "}`}>
                 <ul className="menu bg-white text-base-content h-full  w-80 p-4">
                   <div className="my-3 font-semibold text-[17px]">
                     Dima Groupe

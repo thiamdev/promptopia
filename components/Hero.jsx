@@ -42,7 +42,7 @@ export const Hero = ({ loading }) => {
                 setFade(true); // Restaure l'opacité après changement de texte
             }, 1000); // Délai pour laisser la transition de disparition se produire
         }, 8000); // Intervalle de 4000 ms
-        return () => clearInterval(interval);
+        return () => clearInterval(intervalText);
     }, []);
 
 

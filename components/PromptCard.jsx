@@ -15,7 +15,7 @@ const PromptCard = ({ post, handleTagClick, handleEdit, handleDelete }) => {
   const [copied, setCopied] = useState("");
 
   const handleProfileClick = () => {
-    if (post?.creator === session?.user.id) return router.push("/profile");
+    if (post?.creator === session?.user.id) return router.push("/profile/post");
 
     router.push(`/profile/post/${post._id}?name=${post._id}`);
 
@@ -85,7 +85,7 @@ const PromptCard = ({ post, handleTagClick, handleEdit, handleDelete }) => {
 
               </div>
               <div className="w-full">
-              {session?.user.id === post?.creator?._id && pathName === "/profile" && (
+              {session?.user.id === post?.creator?._id && pathName === "/profile/post" && (
                 <div className="my-4 flex w-full justify-between mx-2">
                   <button
                     type="button"
