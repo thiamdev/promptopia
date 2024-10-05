@@ -8,7 +8,7 @@ const ReactApexChart = dynamic(() => import("react-apexcharts"), {
 });
 
 const options = {
-  colors: ["#3C50E0", "#80CAEE"],
+  colors: ["#EA580C", "#80CAEE"],
   chart: {
     fontFamily: "Satoshi, sans-serif",
     type: "bar",

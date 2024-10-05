@@ -1,18 +1,21 @@
 "use client";
-
+import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
+import { ReactQueryDevtools } from '@tanstack/react-query-devtools';
 import Feed from "@components/Feed";
-import { useEffect } from "react";
-import Link from "next/link";
 
-const timestamp = Date.now();
-const project = 'promptopia';
+const queryClient = new QueryClient()
 
-const Home = () => {
+function Home(){
+
 
   return (
     <section className="w-full relative">
+        <QueryClientProvider client={queryClient}> 
       
-      <Feed />
+        <Feed />
+        
+      </QueryClientProvider>
+     
     </section>
   );
 };

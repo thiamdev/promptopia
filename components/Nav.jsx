@@ -6,7 +6,7 @@ import Image from "next/image"
 import { useEffect, useState } from 'react';
 
 
-export default function Navbar({ handleSearchChange, searchText }) {
+export default function Navbar({ handleSearchChange, searchText, loading }) {
 
     const { data: session } = useSession();
     const [providers, setProviders] = useState(null);
@@ -67,7 +67,11 @@ export default function Navbar({ handleSearchChange, searchText }) {
                             {providers &&
                                 Object.values(providers).map((provider) => (
                                     <div className="flex items-center gap-2">
-                                        <button
+                                         {loading ? (
+                                             <div className="skeleton h-8 w-32"></div>
+                                         ):
+                                         (
+                                            <button
                                             type="button"
                                             key={provider.name}
                                             onClick={() => signIn(provider.id)}
@@ -75,14 +79,22 @@ export default function Navbar({ handleSearchChange, searchText }) {
                                         >
                                             Se connecter
                                         </button>
-                                        <button
+                                         )}
+                                            {loading ? (
+                                             <div className="skeleton h-8 w-32"></div>
+                                         ):
+                                         (
+                                            <button
                                             type="button"
                                             key={provider.name}
                                             onClick={() => signIn(provider.id)}
                                             className="black_btn"
                                         >
-                                          Creer un compte
+                                             Creer un compte
                                         </button>
+                                         )}
+
+                                   
                                     </div>
 
                                 ))}

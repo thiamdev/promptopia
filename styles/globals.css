@@ -9,6 +9,9 @@
 *:after {
   @apply cursor-default;
 }
+html {
+  scroll-behavior: smooth;
+}
 
 .header{
   width: 100%;

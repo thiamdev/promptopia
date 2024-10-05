@@ -64,8 +64,8 @@ const MyProfile = () => {
 
   return (
     <div>
-      <main className="profile-page bg-white">
-        <section className="relative block  h-[500px]">
+      <main className="profile-page bg-white w-full">
+        <section className="relative block w-full">
           <div>
             <Image
               src={"/images/cover/cover-01.png"}
@@ -85,21 +85,21 @@ const MyProfile = () => {
         </section>
         <section className="relative py-16 bg-white">
           <div className="container mx-auto px-4">
-            <div className="relative w-full  flex flex-col min-w-0 break-words bg-white mb-6 shadow-xl rounded-lg -mt-64">
-              <div className="px-4 pb-6 w-full max-w-2xl mx-auto text-center lg:pb-8 xl:pb-11">
-                <div className="relative z-30 mx-auto -mt-20 h-30 w-full max-w-32 rounded-full bg-white/40 p-1 backdrop-blur sm:h-[10rem] sm:max-w-[10rem] sm:p-3 overflow-hidden">
+            <div className="relative w-full  flex flex-col min-w-0 break-words bg-white mb-6  rounded-lg -mt-64">
+              <div className="px-4 pb-6 mt-10 w-full max-w-2xl mx-auto text-center lg:pb-8 xl:pb-11">
+                <div className="relative -z-0 mx-auto  h-30 w-full  max-w-[128px]  rounded-full bg-white/40 p-1 backdrop-blur sm:h-[10rem] sm:max-w-[10rem] sm:p-3 overflow-hidden">
                   <div className="relative drop-shadow-2 flex items-center justify-center ">
                     <Image
                       src={session?.user.image}
                       width={100}
                       height={100}
-                    
+
                       alt="profile"
                       className="w-full h-full rounded-full"
                     />
                     <label
                       htmlFor="profile"
-                      className="absolute bottom-0 right-0 flex h-8 w-8 cursor-pointer items-center justify-center rounded-full bg-primary text-white hover:bg-opacity-90 sm:bottom-2 sm:right-2"
+                      className="absolute bottom-0 z-0 right-0 flex h-8 w-8 cursor-pointer items-center justify-center rounded-full bg-primary text-white hover:bg-opacity-90 sm:bottom-2 sm:right-2"
                     >
                       <svg
                         className="fill-current"
@@ -136,16 +136,16 @@ const MyProfile = () => {
                     {session?.user.name}
                   </h3>
                   <p className="font-medium">{session?.user.email}</p>
-                  <div className="mx-auto mb-5 mt-5 grid max-w-94 grid-cols-3 rounded-md border border-stroke py-2 shadow-1 dark:border-strokedark dark:bg-[#37404F]">
-                    <div className="flex flex-col items-center justify-center gap-1 border-r border-stroke px-4 dark:border-strokedark xsm:flex-row">
+                  <div className="mx-auto mb-5 mt-5 grid max-w-7xl grid-cols-3 rounded-md  py-2 shadow-1  dark:bg-[#37404F]">
+                    <div className="flex flex-col items-center justify-center gap-1 xsm:flex-row">
                       <span className="font-semibold text-black dark:text-white">
                         {myPosts?.length}
                       </span>
                       <span className="text-sm">Posts</span>
                     </div>
-                    <div className="flex flex-col items-center justify-center gap-1 border-r border-stroke px-4 dark:border-strokedark xsm:flex-row">
+                    <div className="flex flex-col items-center justify-center gap-1 xsm:flex-row">
                       <span className="font-semibold text-black dark:text-white">
-                      {myPosts?.comments?.length}
+                        {myPosts?.comments?.length}
                       </span>
                       <span className="text-sm">Commentaire</span>
                     </div>
@@ -157,42 +157,58 @@ const MyProfile = () => {
                     </div>
                   </div>
 
+                  <div className="my-4">
+                    Ajouter des information 
+                  </div>
+
+
+
+                </div>
+
+              </div>
+
+            </div>
+            <div className=" py-2  text-center w-full">
+              <div className="flex flex-wrap justify-center w-full">
+                <div className="w-full px-4">
+                  <div role="tablist" className="tabs tabs-bordered">
+                    <input type="radio" name="my_tabs_1" role="tab" className="tab" aria-label="Post" />
+                    <div role="tabpanel" className="tab-content p-10">
+                    <div className="prompt_layout_profil">
+                    {myPosts.map((item, index) => (
+                      <PromptCard
+                        key={index}
+                        post={item}
+                        handleEdit={handleEdit}
+                        handleDelete={handleDelete}
+                      />
+                    ))}
+                  </div>
+                    </div>
+
+                    <input
+                      type="radio"
+                      name="my_tabs_1"
+                      role="tab"
+                      className="tab"
+                      aria-label="Commentaire"
+                      defaultChecked />
+                    <div role="tabpanel" className="tab-content p-10 w-full">Les commentaire</div>
+
+                    <input type="radio" name="my_tabs_1" role="tab" className="tab" aria-label="Likes" />
+                    <div role="tabpanel" className="tab-content p-10 w-full">Likes</div>
+                  </div>
                  
 
-                
+
                 </div>
-                
               </div>
-          
+
+
+
             </div>
-            <div className=" py-10  text-center">
-                <div className="flex flex-wrap justify-center">
-               <div className="w-full px-4">
-                <div className="flex items-center gap-5">
-                  <div className="font-semibold border-b-2 border-gray-800">Vente</div>
-                  <div>Commentaire</div>
-
-                </div>
-                <div className="prompt_layout_profil">
-                  {myPosts.map((item, index) => (
-                    <PromptCard
-                      key={index}
-                      post={item}
-                      handleEdit={handleEdit}
-                      handleDelete={handleDelete}
-                    />
-                  ))}
-                </div>
-
-
-              </div>
-            </div>
-
-
-
           </div>
-          </div>
-         
+
         </section>
 
       </main>

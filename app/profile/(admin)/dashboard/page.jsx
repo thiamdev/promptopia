@@ -9,7 +9,7 @@ const dashboard = () => {
   return (
     <div className="w-full">
         <div className="w-full grid grid-cols-1 gap-4 md:grid-cols-2 md:gap-6 xl:grid-cols-4 2xl:gap-7.5">
-    <CardDataStats title="Total views" total="$3.456K" rate="0.43%" levelUp>
+    <CardDataStats title="Total Trafic" total="$3.456K" rate="0.43%" levelUp>
       <svg
         className="fill-orange-500 dark:fill-white"
         width="22"

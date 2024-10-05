@@ -14,7 +14,7 @@ module.exports = {
   			inter: ["Inter", "sans-serif"]
   		},
   		colors: {
-  			'primary-orange': '#FF5722',
+  			'primary-orange': '#EA580C',
   			background: 'hsl(var(--background))',
   			foreground: 'hsl(var(--foreground))',
   			card: {
