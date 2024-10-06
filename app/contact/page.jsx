@@ -99,7 +99,7 @@ const ContactPage = () => {
               <Mail className="w-10 h-10 text-orange-600 mr-4" />
               <div>
                 <h3 className="text-lg font-semibold">Email Us</h3>
-                <p className="text-gray-600">support@promptopia.com</p>
+                <p className="text-gray-600">ametht69@gmail.com</p>
               </div>
             </div>
 
