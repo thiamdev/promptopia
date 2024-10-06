@@ -161,7 +161,7 @@ const RootLayout = ({ children }) => {
                     <Link href="/profile/settings">
                       <div className={`flex gap-3 ${pathName === '/profile/settings' ? ' bg-orange-500 text-white ' : 'bg-transparent text-black '} mb-2 mt-1 rounded-md px-3 py-4 items-center`}>
                         <Settings className="w-5 h-5" />
-                        Settings
+                        Settings  
                       </div>
                     </Link>
                     <h1 className="font-bold text-xl mx-2">Assistance</h1>
