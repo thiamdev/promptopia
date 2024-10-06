@@ -63,14 +63,14 @@ const MyProfile = () => {
 
 
   return (
-    <div>
+    <div className="w-full">
       <main className="profile-page bg-white w-full">
         <section className="relative block w-full">
           <div>
             <Image
               src={"/images/cover/cover-01.png"}
               alt="profile cover"
-              className="h-full w-full rounded-tl-sm rounded-tr-sm object-cover object-center"
+              className="h-full w-full rounded-tl-sm rounded-tr-sm object-cover z-20 object-center"
               width={970}
               height={260}
               style={{
@@ -87,7 +87,7 @@ const MyProfile = () => {
           <div className="container mx-auto px-4">
             <div className="relative w-full  flex flex-col min-w-0 break-words bg-white mb-6  rounded-lg -mt-64">
               <div className="px-4 pb-6 mt-10 w-full max-w-2xl mx-auto text-center lg:pb-8 xl:pb-11">
-                <div className="relative -z-0 mx-auto  h-30 w-full  max-w-[128px]  rounded-full bg-white/40 p-1 backdrop-blur sm:h-[10rem] sm:max-w-[10rem] sm:p-3 overflow-hidden">
+                <div className="relative z-10  mx-auto  h-32 w-full  max-w-[128px]  rounded-full bg-white/40 p-1 backdrop-blur sm:h-[10rem] sm:max-w-[10rem] sm:p-3 overflow-hidden">
                   <div className="relative drop-shadow-2 flex items-center justify-center ">
                     <Image
                       src={session?.user.image}
@@ -158,7 +158,7 @@ const MyProfile = () => {
                   </div>
 
                   <div className="my-4">
-                    Ajouter des information 
+                    Ajouter des information
                   </div>
 
 
@@ -172,18 +172,25 @@ const MyProfile = () => {
               <div className="flex flex-wrap justify-center w-full">
                 <div className="w-full px-4">
                   <div role="tablist" className="tabs tabs-bordered">
-                    <input type="radio" name="my_tabs_1" role="tab" className="tab" aria-label="Post" />
+                    <input
+                      type="radio"
+                      name="my_tabs_1"
+                      role="tab"
+                      className="tab"
+                      aria-label="Post"
+                      defaultChecked
+                    />
                     <div role="tabpanel" className="tab-content p-10">
-                    <div className="prompt_layout_profil">
-                    {myPosts.map((item, index) => (
-                      <PromptCard
-                        key={index}
-                        post={item}
-                        handleEdit={handleEdit}
-                        handleDelete={handleDelete}
-                      />
-                    ))}
-                  </div>
+                      <div className="prompt_layout_profil">
+                        {myPosts.map((item, index) => (
+                          <PromptCard
+                            key={index}
+                            post={item}
+                            handleEdit={handleEdit}
+                            handleDelete={handleDelete}
+                          />
+                        ))}
+                      </div>
                     </div>
 
                     <input
@@ -192,13 +199,23 @@ const MyProfile = () => {
                       role="tab"
                       className="tab"
                       aria-label="Commentaire"
-                      defaultChecked />
-                    <div role="tabpanel" className="tab-content p-10 w-full">Les commentaire</div>
+                    />
+                    <div role="tabpanel" className="tab-content p-10 w-full">
+                      <div className="prompt_layout_profil"> Les commentaitre</div>
+                    </div>
 
-                    <input type="radio" name="my_tabs_1" role="tab" className="tab" aria-label="Likes" />
-                    <div role="tabpanel" className="tab-content p-10 w-full">Likes</div>
+                    <input
+                      type="radio"
+                      name="my_tabs_1"
+                      role="tab"
+                      className="tab"
+                      aria-label="Likes"
+                    />
+                    <div role="tabpanel" className="tab-content p-10 w-full">
+                      <div className="prompt_layout_profil">Les Likes</div>
+                    </div>
                   </div>
-                 
+
 
 
                 </div>

@@ -53,40 +53,40 @@ const RootLayout = ({ children }) => {
                       </div>
 
                     </Link>
-                    <Link href="profile/create-prompt" className="">
+                    <Link href="/profile/create-prompt" className="">
                       <div className={`flex gap-3 ${pathName === '/profile/create-prompt' ? ' bg-orange-500 text-white ' : 'bg-transparent text-black '} mb-2 mt-1 rounded-md px-3 py-4 items-center`}>
                         <UploadCloud className="w-5 h-5" />
                         Creer une annoce
                       </div>
 
                     </Link>
-                    <Link href="profile/dashboard">
+                    <Link href="/profile/dashboard">
                       <div className={`flex gap-3 ${pathName === '/profile/dashboard' ? 'bg-orange-500 text-white ' : 'bg-transparent text-black '} mb-2 mt-1 rounded-md px-3 py-4 items-center`}>
                         <LayoutDashboard className="w-5 h-5" />
                         Dashboard
                       </div>
 
                     </Link>
-                    <Link href="profile/post">
+                    <Link href="/profile/post">
                       <div className={`flex gap-3 ${pathName === '/profile/post' ? ' bg-orange-500 text-white ' : 'bg-transparent text-black '} mb-2 mt-1 rounded-md px-3 py-4 items-center`}>
                         <User className="w-5 h-5" />
                         User Profile
                       </div>
                     </Link>
-                    <Link href="profile/settings">
+                    <Link href="/profile/settings">
                       <div className={`flex gap-3 ${pathName === '/profile/settings' ? ' bg-orange-500 text-white ' : 'bg-transparent text-black '} mb-2 mt-1 rounded-md px-3 py-4 items-center`}>
                         <Settings className="w-5 h-5" />
                         Settings
                       </div>
                     </Link>
                     <h1 className="font-bold text-xl mx-2">Assistance</h1>
-                    <Link href="profile/aide">
+                    <Link href="/profile/aide">
                       <div className={`flex gap-3 ${pathName === '/profile/aide' ? ' bg-orange-500 text-white ' : 'bg-transparent text-black '} mb-2 mt-1 rounded-md px-3 py-4 items-center`}>
                         <CircleHelp className="w-5 h-5" />
                         Consulter le centre d'aide
                       </div>
                     </Link>
-                    <Link href="profile/signal">
+                    <Link href="/profile/signal">
                       <div className={`flex gap-3 ${pathName === '/profile/signal' ? ' bg-orange-500 text-white ' : 'bg-transparent text-black '} mb-2 mt-1 rounded-md px-3 py-4 items-center`}>
                         <Headset className="w-5 h-5" />
                         Signaler un problème
@@ -138,40 +138,40 @@ const RootLayout = ({ children }) => {
                       </div>
 
                     </Link>
-                    <Link href="profile/create-prompt" className="">
+                    <Link href="/profile/create-prompt" className="">
                       <div className={`flex gap-3 ${pathName === '/profile/create-prompt' ? ' bg-orange-500 text-white ' : 'bg-transparent text-black '} mb-2 mt-1 rounded-md px-3 py-4 items-center`}>
                         <UploadCloud className="w-5 h-5" />
                         Creer une annoce
                       </div>
 
                     </Link>
-                    <Link href="profile/dashboard">
+                    <Link href="/profile/dashboard">
                       <div className={`flex gap-3 ${pathName === '/profile/dashboard' ? 'bg-orange-500 text-white ' : 'bg-transparent text-black '} mb-2 mt-1 rounded-md px-3 py-4 items-center`}>
                         <LayoutDashboard className="w-5 h-5" />
                         Dashboard
                       </div>
 
                     </Link>
-                    <Link href="profile/post">
+                    <Link href="/profile/post">
                       <div className={`flex gap-3 ${pathName === '/profile/post' ? ' bg-orange-500 text-white ' : 'bg-transparent text-black '} mb-2 mt-1 rounded-md px-3 py-4 items-center`}>
                         <User className="w-5 h-5" />
                         User Profile
                       </div>
                     </Link>
-                    <Link href="profile/settings">
+                    <Link href="/profile/settings">
                       <div className={`flex gap-3 ${pathName === '/profile/settings' ? ' bg-orange-500 text-white ' : 'bg-transparent text-black '} mb-2 mt-1 rounded-md px-3 py-4 items-center`}>
                         <Settings className="w-5 h-5" />
                         Settings
                       </div>
                     </Link>
                     <h1 className="font-bold text-xl mx-2">Assistance</h1>
-                    <Link href="profile/aide">
+                    <Link href="/profile/aide">
                       <div className={`flex gap-3 ${pathName === '/profile/aide' ? ' bg-orange-500 text-white ' : 'bg-transparent text-black '} mb-2 mt-1 rounded-md px-3 py-4 items-center`}>
                         <CircleHelp className="w-5 h-5" />
                         Consulter le centre d'aide
                       </div>
                     </Link>
-                    <Link href="profile/signal">
+                    <Link href="/profile/signal">
                       <div className={`flex gap-3 ${pathName === '/profile/signal' ? ' bg-orange-500 text-white ' : 'bg-transparent text-black '} mb-2 mt-1 rounded-md px-3 py-4 items-center`}>
                         <Headset className="w-5 h-5" />
                         Signaler un problème
