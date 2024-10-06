@@ -1,5 +1,3 @@
-"use client";
-
 import CardDataStats from '@components/CardDataStats'
 import ChartOne from '@components/Charts/ChartOne'
 import ChartTwo from '@components/Charts/ChartTwo'

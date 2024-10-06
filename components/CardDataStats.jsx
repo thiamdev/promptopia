@@ -1,7 +1,4 @@
 
-
-
-
 const CardDataStats = ({
   title,
   total,
